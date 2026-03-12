@@ -18,9 +18,10 @@
     <FileVersion>$(Version)</FileVersion>
     <AssemblyName>wauncher</AssemblyName>
 	<Product>ClassicCounter Wauncher</Product>
-    <Company>ClassicCounter Team</Company>
+    <Company>PookTechnologies United</Company>
     <Authors>koolych</Authors>
     <ApplicationIcon>Assets\Wauncher.ico</ApplicationIcon>
+    <Copyright>Copyright (c) 2024 heapy, Copyright (c) 2026 koolych</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
