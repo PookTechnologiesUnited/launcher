@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Launcher.Utils;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -6,6 +7,20 @@ namespace Wauncher.Utils
 {
     public class Services
     {
+        public static async Task GetLatestRelease(string latestVersion)
+        {
+
+            string updaterPath = Path.Combine(AppContext.BaseDirectory, "updater.exe");
+            await DownloadManager.DownloadUpdater(updaterPath);
+
+            Process updaterProcess = new Process();
+            updaterProcess.StartInfo.FileName = updaterPath;
+            updaterProcess.StartInfo.Arguments = $"--version={latestVersion} --ui";
+            updaterProcess.Start();
+
+            Environment.Exit(0);
+            return;
+        }
         public static string GetMd5(string str)
         {
             if (String.IsNullOrEmpty(str))

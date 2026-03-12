@@ -12,11 +12,18 @@ namespace Wauncher
 {
     public partial class App : Application
     {
+        public bool NewVersionAvailable = false;
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
             Discord.Init();
             ProtocolManager.RegisterURIHandler();
+
+            if (!Argument.Exists("--skip-updates"))
+            {
+                string latestVersion = Task.Run(async () => await Launcher.Utils.Version.GetLatestVersion()).GetAwaiter().GetResult();
+                if (Launcher.Utils.Version.Current != latestVersion) NewVersionAvailable = true;
+            }
         }
 
         public override void OnFrameworkInitializationCompleted()
@@ -26,9 +33,15 @@ namespace Wauncher
                 // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
                 // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
                 DisableAvaloniaDataAnnotationValidation();
-                desktop.MainWindow = new MainWindow
+
+                desktop.MainWindow = NewVersionAvailable
+                ? new UpdatePrompt
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = new UpdatePromptViewModel()
+                }
+                : new MainWindow
+                {
+                    DataContext = new MainWindowViewModel()
                 };
             }
 

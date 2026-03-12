@@ -13,30 +13,12 @@ namespace Wauncher
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
         // yet and stuff might break.
         [STAThread]
-        public static async Task Main(string[] args)
+        public static void Main(string[] args)
         {
             if (OnStartup(args) == false)
             {
                 Environment.Exit(0);
                 return;
-            }
-
-            if (!Argument.Exists("--skip-updates"))
-            {
-                string latestVersion = await Launcher.Utils.Version.GetLatestVersion();
-                if (Launcher.Utils.Version.Current != latestVersion)
-                {
-                    string updaterPath = Path.Combine(AppContext.BaseDirectory, "updater.exe");
-                    await DownloadManager.DownloadUpdater(updaterPath);
-
-                    Process updaterProcess = new Process();
-                    updaterProcess.StartInfo.FileName = updaterPath;
-                    updaterProcess.StartInfo.Arguments = $"--version={latestVersion} --ui";
-                    updaterProcess.Start();
-
-                    Environment.Exit(0);
-                    return;
-                }
             }
 
             BuildAvaloniaApp()
