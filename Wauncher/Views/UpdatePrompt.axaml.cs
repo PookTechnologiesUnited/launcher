@@ -1,8 +1,6 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
-namespace Wauncher.Views;
+namespace Wauncher;
 
 public partial class UpdatePrompt : Window
 {
