@@ -16,7 +16,8 @@ namespace Wauncher.ViewModels
         [ObservableProperty]
         private string _usernameGreeting = "Hello, username";
         
-        public string WhitelistStatus { get; set; } = "Gray";
+        public string WhitelistStatusColor { get; private set; } = "Gray";
+        public string WhitelistStatus { get; private set;} = "Unknown";
         
         public MainWindowViewModel()
         {
@@ -24,6 +25,8 @@ namespace Wauncher.ViewModels
             {
                 ProtocolManager = ProtocolManager + "Ready to Launch!";
             }
+
+
 
             Discord.OnAvatarUpdate += (avatarUrl) =>
             {

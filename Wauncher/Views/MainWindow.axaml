@@ -40,10 +40,10 @@
 				<Ellipse
 					Width="8"
 					Height="8"
-					Fill="{Binding WhitelistStatus}" />
+					Fill="{Binding WhitelistStatusColor}" />
 				<TextBlock
 					Classes="h1"
-					Text="Unknown"
+					Text="{Binding WhitelistStatus}"
 					TextAlignment="Right" />
 				<Button
 					Classes="info"
