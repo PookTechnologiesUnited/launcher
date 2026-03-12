@@ -47,4 +47,4 @@
 [issues-shield]: https://img.shields.io/github/issues/PookTechnologiesUnited/launcher.svg?style=for-the-badge
 [issues-url]: https://github.com/PookTechnologiesUnited/launcher/issues
 [license-shield]: https://img.shields.io/github/license/PookTechnologiesUnited/launcher.svg?style=for-the-badge
-[license-url]: https://github.com/PookTechnologiesUnited/launcher/blob/main/LICENSE.txt
+[license-url]: https://github.com/PookTechnologiesUnited/launcher/blob/main/LICENSE
