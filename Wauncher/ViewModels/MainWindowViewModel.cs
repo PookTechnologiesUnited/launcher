@@ -7,18 +7,18 @@ namespace Wauncher.ViewModels
     public partial class MainWindowViewModel : ViewModelBase
     {
         public string GameStatus { get; private set; } = "Game Status: ";
-        
+
         public string ProtocolManager { get; private set; } = "Selected server: ";
-        
+
         [ObservableProperty]
         private string _profilePicture = "https://avatars.githubusercontent.com/u/75831703?v=4";
 
         [ObservableProperty]
         private string _usernameGreeting = "Hello, username";
-        
+
         public string WhitelistStatusColor { get; private set; } = "Gray";
-        public string WhitelistStatus { get; private set;} = "Unknown";
-        
+        public string WhitelistStatus { get; private set; } = "Unknown";
+
         public MainWindowViewModel()
         {
             if (Argument.Exists("--protocol-command"))

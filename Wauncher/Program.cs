@@ -7,7 +7,7 @@ namespace Wauncher
 {
     internal sealed class Program
     {
-        public static EventWaitHandle ProgramStarted;
+        public static EventWaitHandle? ProgramStarted;
 
         // Initialization code. Don't use any Avalonia, third-party APIs or any
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized

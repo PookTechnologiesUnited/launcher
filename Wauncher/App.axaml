@@ -1,29 +1,33 @@
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="Wauncher.App"
-			 x:CompileBindings="True"
-			 x:DataType="local:App"
-             xmlns:local="using:Wauncher"
-             RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+<Application
+	x:Class="Wauncher.App"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:Wauncher"
+	x:CompileBindings="True"
+	x:DataType="local:App"
+	RequestedThemeVariant="Default">
+	<!--  "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options.  -->
 
-    <Application.DataTemplates>
-        <local:ViewLocator/>
-    </Application.DataTemplates>
-  
-    <Application.Styles>
-        <FluentTheme />
-		<StyleInclude Source="/Assets/Styles.axaml"/>
-    </Application.Styles>
+	<Application.DataTemplates>
+		<local:ViewLocator />
+	</Application.DataTemplates>
+
+	<Application.Styles>
+		<FluentTheme />
+		<StyleInclude Source="/Assets/Styles.axaml" />
+	</Application.Styles>
 
 	<TrayIcon.Icons>
 		<TrayIcons>
-			<TrayIcon Icon="/Assets/Wauncher.ico" ToolTipText="Wauncher" Command="{Binding TrayIconClickedCommand}">
+			<TrayIcon
+				Command="{Binding TrayIconClickedCommand}"
+				Icon="/Assets/Wauncher.ico"
+				ToolTipText="Wauncher">
 				<TrayIcon.Menu>
 					<NativeMenu>
-						<NativeMenuItem Header="Discord RPC is running" IsEnabled="False"/>
+						<NativeMenuItem Header="Discord RPC is running" IsEnabled="False" />
 						<NativeMenuItemSeparator />
-						<NativeMenuItem Header="E_xit" Click="ExitApplication_Click"/>
+						<NativeMenuItem Click="ExitApplication_Click" Header="E_xit" />
 					</NativeMenu>
 				</TrayIcon.Menu>
 			</TrayIcon>

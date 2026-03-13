@@ -45,9 +45,7 @@
 					Classes="h1"
 					Text="{Binding WhitelistStatus}"
 					TextAlignment="Right" />
-				<Button
-					Classes="info"
-					Click="Button_Info">
+				<Button Classes="info" Click="Button_Info">
 					<TextBlock Classes="h2">
 						?
 					</TextBlock>
@@ -59,9 +57,7 @@
 				<TextBlock Classes="h1" Text="{Binding GameStatus}" />
 				<TextBlock Classes="h1" Text="{Binding ProtocolManager}" />
 			</StackPanel>
-			<Button
-				Classes="launch"
-				Click="Button_Click">
+			<Button Classes="launch" Click="Button_Click">
 				<StackPanel Orientation="Horizontal" Spacing="8">
 					<Svg
 						Width="17"

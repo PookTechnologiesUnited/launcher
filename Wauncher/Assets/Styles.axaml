@@ -70,7 +70,9 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Template">
-            <ControlTemplate TargetType="Button" x:DataType="Button"><TextBlock Text="{TemplateBinding Content}" TextDecorations="Underline" /></ControlTemplate>
+            <ControlTemplate x:DataType="Button" TargetType="Button">
+                <TextBlock Text="{TemplateBinding Content}" TextDecorations="Underline" />
+            </ControlTemplate>
         </Setter>
     </Style>
 </Styles>

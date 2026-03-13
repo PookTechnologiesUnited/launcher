@@ -5,7 +5,7 @@ namespace Wauncher.Utils
     public class ProtocolManager
     {
         public static void RegisterURIHandler()
-        {   
+        {
             var appCurrentLocation = Path.Combine(new FileInfo(System.Environment.ProcessPath).Directory.FullName, "wauncher.exe");
             EnsureKeyExists(Registry.CurrentUser, "Software/Classes/cc", "ClassicCounter");
             SetValue(Registry.CurrentUser, "Software/Classes/cc", "URL Protocol", string.Empty);
