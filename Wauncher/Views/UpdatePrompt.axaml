@@ -1,9 +1,41 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="Wauncher.UpdatePrompt"
-        Title="UpdatePrompt">
-  Welcome to Avalonia!
+<Window 
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Wauncher.ViewModels"
+    x:Class="Wauncher.UpdatePrompt"
+    Title="UpdatePrompt"
+    Width="480"
+    Height="128"
+    d:DesignHeight="128"
+	d:DesignWidth="480"
+	x:DataType="vm:UpdatePromptViewModel"
+	Icon="/Assets/Wauncher.ico"
+	mc:Ignorable="d">
+    <Design.DataContext>
+        <vm:UpdatePromptViewModel />
+    </Design.DataContext>
+    <Grid Background="Black">
+		<Grid Margin="25,16" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Spacing="4">
+			    <TextBlock Classes="big" Text="Wauncher update available. Update Now?" />
+                <Button Classes="HyperlinkButton" VerticalAlignment="Bottom">
+					See what's new
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Margin="25,16" VerticalAlignment="Bottom">
+			<StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="8">
+				<Button Classes="info">
+					<TextBlock Classes="h2" Text="Reject" />
+                </Button>
+                <Button Classes="update" Click="Button_Update">
+					<TextBlock Classes="h2" Text="Update" />
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
 </Window>
