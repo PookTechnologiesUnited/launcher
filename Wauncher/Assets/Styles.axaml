@@ -20,6 +20,14 @@
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
+    <Style Selector="TextBlock.big">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="600" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
     <Style Selector="Button">
         <Setter Property="Height" Value="40" />
         <Setter Property="Margin" Value="0" />
@@ -42,6 +50,14 @@
 
     <Style Selector="Button.launch:pointerover /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="Green" />
+    </Style>
+
+    <Style Selector="Button.update">
+        <Setter Property="Background" Value="Green" />
+    </Style>
+
+    <Style Selector="Button.update:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="DarkGreen" />
     </Style>
 
     <Style Selector="Button.HyperlinkButton">
