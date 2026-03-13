@@ -21,8 +21,8 @@ namespace Wauncher
 
             if (!Argument.Exists("--skip-updates"))
             {
-                string latestVersion = Task.Run(async () => await Launcher.Utils.Version.GetLatestVersion()).GetAwaiter().GetResult();
-                if (Launcher.Utils.Version.Current != latestVersion) NewVersionAvailable = true;
+                Services.LatestVersion = Task.Run(async () => await Launcher.Utils.Version.GetLatestVersion()).GetAwaiter().GetResult();
+                if (Launcher.Utils.Version.Current != Services.LatestVersion) NewVersionAvailable = true;
             }
         }
 

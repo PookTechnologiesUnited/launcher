@@ -7,7 +7,8 @@ namespace Wauncher.Utils
 {
     public class Services
     {
-        public static async Task GetLatestRelease(string latestVersion)
+        public static string LatestVersion { get; set; } = Launcher.Utils.Version.Current;
+        public static async Task GetLatestRelease()
         {
 
             string updaterPath = Path.Combine(AppContext.BaseDirectory, "updater.exe");
@@ -15,7 +16,7 @@ namespace Wauncher.Utils
 
             Process updaterProcess = new Process();
             updaterProcess.StartInfo.FileName = updaterPath;
-            updaterProcess.StartInfo.Arguments = $"--version={latestVersion} --ui";
+            updaterProcess.StartInfo.Arguments = $"--version={LatestVersion} --ui";
             updaterProcess.Start();
 
             Environment.Exit(0);
