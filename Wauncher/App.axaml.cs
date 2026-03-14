@@ -34,15 +34,17 @@ namespace Wauncher
                 // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
                 DisableAvaloniaDataAnnotationValidation();
 
-                desktop.MainWindow = NewVersionAvailable
-                ? new UpdatePrompt
+                if (NewVersionAvailable)
                 {
-                    DataContext = new UpdatePromptViewModel()
+                    desktop.MainWindow = new UpdatePrompt();
                 }
-                : new MainWindow
+                else
+                {
+                    desktop.MainWindow = new MainWindow
                 {
                     DataContext = new MainWindowViewModel()
                 };
+                }
             }
 
             base.OnFrameworkInitializationCompleted();

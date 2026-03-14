@@ -20,7 +20,11 @@
         <Grid Margin="25,16" VerticalAlignment="Top">
             <StackPanel Orientation="Vertical" Spacing="4">
                 <TextBlock Classes="big" Text="Wauncher update available. Update Now?" />
-                <Button VerticalAlignment="Bottom" Classes="HyperlinkButton">
+                <Button
+                    VerticalAlignment="Bottom"
+                    Classes="HyperlinkButton"
+                    Command="{Binding OpenUrlCommand}"
+                    CommandParameter="https://github.com/PookTechnologiesUnited/Launcher/releases/latest">
                     See what's new
                 </Button>
             </StackPanel>
@@ -30,7 +34,7 @@
                 HorizontalAlignment="Right"
                 Orientation="Horizontal"
                 Spacing="8">
-                <Button Classes="info">
+                <Button Classes="info" Click="Button_Reject">
                     <TextBlock Classes="h2" Text="Reject" />
                 </Button>
                 <Button Classes="update" Click="Button_Update">
