@@ -16,9 +16,12 @@
 		<Grid Margin="25,16" VerticalAlignment="Top">
 			<Grid>
 				<Border HorizontalAlignment="Left">
-					<TextBlock Classes="h1" Text="ClassicCounter Team" />
+					<StackPanel>
+						<TextBlock Classes="h1" Text="PookTechnologies United" />
+						<TextBlock Classes="h2" Text="by koolych"/>
+					</StackPanel>
 				</Border>
-				<Border HorizontalAlignment="Right" VerticalAlignment="Bottom">
+				<Border HorizontalAlignment="Right" VerticalAlignment="Center">
 					<TextBlock Classes="h2" Text="Version 3.0.0a" />
 				</Border>
 			</Grid>
