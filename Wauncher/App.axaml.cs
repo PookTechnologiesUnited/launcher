@@ -22,7 +22,7 @@ namespace Wauncher
             if (!Argument.Exists("--skip-updates"))
             {
                 Services.LatestVersion = Task.Run(async () => await Wauncher.Utils.Version.GetLatestVersion()).GetAwaiter().GetResult();
-                if (Launcher.Utils.Version.Current != Services.LatestVersion) NewVersionAvailable = true;
+                if (Wauncher.Utils.Version.Current != Services.LatestVersion) NewVersionAvailable = true;
             }
         }
 
