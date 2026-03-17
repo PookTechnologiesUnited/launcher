@@ -19,8 +19,8 @@ mono_crash.*
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
+[Rr]release/
+[Rr]releases/
 x64/
 x86/
 [Ww][Ii][Nn]32/
@@ -52,7 +52,7 @@ nunit-*.xml
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
-[Rr]eleasePS/
+[Rr]releasePS/
 dlldata.c
 
 # Benchmark Results
@@ -305,9 +305,9 @@ node_modules/
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
 
-# Paket dependency manager
-.paket/paket.exe
-paket-files/
+# Packet dependency manager
+.packet/packet.exe
+packet-files/
 
 # FAKE - F# Make
 .fake/
@@ -449,7 +449,7 @@ $RECYCLE.BIN/
 ## Visual Studio Code
 ##
 .vscode/*
-!.vscode/settings.json
+.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/extensions.json
 
