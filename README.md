@@ -1,7 +1,7 @@
 <p align="center">
  <h2 align="center">ClassicCounter Launcher</h2>
  <p align="center">
-   Launcher for ClassicCounter with Discord RPC, Auto-Updates and More!
+   Launcher for ClassicCounter, distributed and maintained by PTu.
    <br/>
    Written in C# using .NET 8.
  </p>
@@ -15,19 +15,6 @@
 > [!IMPORTANT]
 > .NET Desktop Runtime 8 is required to run the launcher. Download it from [**here**](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-8.0.25-windows-x64-installer).
 
-## Arguments
-- `--debug-mode` - Enables debug mode, prints additional info.
-- `--disable-rpc` - Disables Discord RPC.
-- `--gc` - Launches the Game with custom Game Coordinator.
-- `--install-dependencies` - Launches setup process for required Game dependencies.
-- `--patch-only` - Will only check for patches, won't open the game.
-- `--skip-updates` - Skips checking for launcher updates.
-- `--skip-validating` - Skips validating patches.
-- `--validate-all` - Validates all game files.
-
-> [!CAUTION]
-> **Using `--skip-updates` or `--skip-validating` is NOT recommended!**  
-> **An outdated launcher or patches might cause issues.**
 
 ## Packages Used
 - [AsyncImageLoader](https://github.com/AvaloniaUtils/AsyncImageLoader.Avalonia) by [SKProCH](https://github.com/SKProCH)
