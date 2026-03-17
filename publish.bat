@@ -10,6 +10,7 @@ certutil -hashfile "Launcher\bin\Release\net8.0-windows7.0\win-x64\publish\launc
 certutil -hashfile "Wauncher\bin\Release\net8.0-windows7.0\win-x64\publish\wauncher.exe" MD5
 echo =============================
 echo %ESC%[1;43mCopying...%ESC%[0m
-set /p "destination=Copying destination (in quotations): "
+set /p "destination=Copy published files into: "
+set destination="%destination:"=%"
 xcopy "Wauncher\bin\Release\net8.0-windows7.0\win-x64\publish\" %destination% /e /y
 timeout /t 5
