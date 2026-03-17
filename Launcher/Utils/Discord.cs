@@ -10,6 +10,7 @@ namespace Launcher.Utils
         private static readonly string _appId = "1133457462024994947";
         private static DiscordRpcClient _client = new DiscordRpcClient(_appId);
         private static RichPresence _presence = new RichPresence();
+        public static bool IsInitialized { get; private set; } = false;
         public static string? CurrentUserId { get; private set; } // ! DEPRECATED ! for whitelist check
         public static string? CurrentUserAvatar { get; private set; }
         public static string? CurrentUserUsername { get; private set; }
@@ -17,6 +18,9 @@ namespace Launcher.Utils
         public static void Init()
         {
             _client.OnReady += OnReady;
+
+            if (IsInitialized)
+                return;
 
             _client.Logger = new ConsoleLogger()
             {
@@ -26,6 +30,10 @@ namespace Launcher.Utils
             if (!_client.Initialize())
             {
                 return;
+            }
+            else
+            {
+                IsInitialized = true;
             }
 
             SetDetails("In Launcher");
@@ -43,13 +51,13 @@ namespace Launcher.Utils
         public static void SetTimestamp(DateTime? time)
         {
             if (_presence.Timestamps == null) _presence.Timestamps = new();
-            _presence.Timestamps.Start = time; 
+            _presence.Timestamps.Start = time;
         }
 
         public static void SetLargeArtwork(string? key)
         {
             if (_presence.Assets == null) _presence.Assets = new();
-            _presence.Assets.LargeImageKey = key; 
+            _presence.Assets.LargeImageKey = key;
         }
 
         public static void SetSmallArtwork(string? key)
