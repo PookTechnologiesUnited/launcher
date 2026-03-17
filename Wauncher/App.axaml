@@ -15,6 +15,9 @@
 	<Application.Styles>
 		<FluentTheme />
 		<StyleInclude Source="/Assets/Styles.axaml" />
+		<Style Selector="Window">
+			<Setter Property="CanResize" Value="False" />
+		</Style>
 	</Application.Styles>
 
 	<TrayIcon.Icons>
