@@ -62,7 +62,7 @@
 					<Svg
 						Width="17"
 						Height="23"
-						Path="/Assets/CS-logo.svg" />
+						Path="/Assets/CS-logo.min.svg" />
 					<TextBlock Classes="h2">
 						Launch Game
 					</TextBlock>
