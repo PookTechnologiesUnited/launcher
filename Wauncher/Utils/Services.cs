@@ -7,7 +7,7 @@ namespace Wauncher.Utils
 {
     public class Services
     {
-        public static string LatestVersion { get; set; } = Launcher.Utils.Version.Current;
+        public static string LatestVersion { get; set; } = Version.Current;
         public static async Task GetLatestRelease()
         {
 
