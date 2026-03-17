@@ -22,7 +22,7 @@
 					</StackPanel>
 				</Border>
 				<Border HorizontalAlignment="Right" VerticalAlignment="Center">
-					<TextBlock Classes="h2" Text="Version 3.0.0a" />
+					<TextBlock Classes="h2" Text="Version 3.0.0" />
 				</Border>
 			</Grid>
 		</Grid>
