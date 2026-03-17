@@ -5,7 +5,7 @@ namespace Wauncher.Utils
 {
     public static class Version
     {
-        public static string Current = "3.0.0";
+        public static string Current = "3.0.0.1";
 
         public async static Task<string> GetLatestVersion()
         {
