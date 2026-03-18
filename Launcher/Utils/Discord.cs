@@ -71,14 +71,12 @@ namespace Launcher.Utils
             CurrentUserId = e.User.ID.ToString(); // ! DEPRECATED ! for passing current uid to api
             CurrentUserAvatar = e.User.GetAvatarURL(User.AvatarFormat.PNG);
             CurrentUserUsername = e.User.Username;
-            OnAvatarUpdate?.Invoke(CurrentUserAvatar);
-            OnUsernameUpdate?.Invoke(CurrentUserUsername);
+            OnUserUpdate?.Invoke(CurrentUserAvatar, CurrentUserUsername);
 
             if (Debug.Enabled())
                 Terminal.Debug($"Discord RPC: User is ready => @{e.User.Username} ({e.User.ID})");
         }
 
-        public static event Action<string?>? OnAvatarUpdate;
-        public static event Action<string?>? OnUsernameUpdate;
+        public static event Action<string?, string?>? OnUserUpdate;
     }
 }

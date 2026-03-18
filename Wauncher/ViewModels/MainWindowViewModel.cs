@@ -25,31 +25,19 @@ namespace Wauncher.ViewModels
             {
                 ProtocolManager = ProtocolManager + "Ready to Launch!";
             }
-
+#pragma warning disable CS8604 // Possible null reference argument.
             if (!Discord.IsInitialized)
             {
-                Discord.OnAvatarUpdate += (avatarUrl) =>
+                Discord.OnUserUpdate += (avatarUrl, username) =>
                 {
-                    if (!string.IsNullOrEmpty(avatarUrl))
-                    {
-                        Dispatcher.UIThread.Post(() => ProfilePicture = avatarUrl);
-                    }
-                };
-
-                Discord.OnUsernameUpdate += (username) =>
-                {
-                    if (!string.IsNullOrEmpty(username))
-                    {
-                        Dispatcher.UIThread.Post(() => UsernameGreeting = $"Hello, {username}");
-                    }
+                    UpdateDiscordUser(avatarUrl, username);
                 };
             }
             else
             {
-#pragma warning disable CS8604 // Possible null reference argument.
                 UpdateDiscordUser(Discord.CurrentUserAvatar, Discord.CurrentUserUsername);
-#pragma warning restore CS8604 // Possible null reference argument.
             }
+#pragma warning restore CS8604 // Possible null reference argument.
         }
 
         public void UpdateDiscordUser(string avatarUrl, string username)
